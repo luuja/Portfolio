@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>АтмаСфера - Билеты</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/all.min.css">
+	<link rel="icon" href="/image/logo.png">
+	</head>
+<body style="overflow: scroll; overflow-x: hidden;">
+	
+	<header>
+		<!-- навигационная панель -->
+        <a class="logo" href="/"><img class="logo" src="image/logo.png" alt="logo"></a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="index.html">Чай</a></li>
+                <li><a href="cookware.html">Посуда</a></li>
+                <li class="active"><a href="billets.html">Билеты</a></li>
+                <li><a href="about.html">О нас</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="#">Корзина</a>
+     </header>
+
+    <div class="wrapper">
+		
+		<!-- контейнер для карточек товаров -->
+	    <div class="dishes">
+	    	<!-- карточка товара -->
+	    	<div class="item">
+	    		<a href="tea.html?id=30"><div class="img-hidden"><img class="dishes-img" src="image/танцы.png" alt=""></div>
+	    			<div class="info">
+	    				<div class="item-price">1 500 ₽</div>
+	    				<div class="item-title">Билет на танцы под открытым небом</div>
+	    			</div>
+	    		</a>
+	    		<button data-id="30" class="cart">В корзину</button>
+	    	</div>
+		    <div class="item">
+	    		<a href="tea.html?id=31"><div class="img-hidden"><img class="dishes-img" src="image/Атмафест.jpg" alt=""></div>
+	    			<div class="info">
+	    				<div class="item-price">3 500 ₽</div>
+	    				<div class="item-title">Билет на АтмаФест</div>
+	    			</div>
+	    		</a>
+	    		<button data-id="31" class="cart">В корзину</button>
+	    	</div>
+		    <div class="item">
+	    		<a href="tea.html?id=32"><div class="img-hidden"><img class="dishes-img" src="image/арт-погружение.jpg" alt=""></div>
+	    			<div class="info">
+	    				<div class="item-price">600 ₽</div>
+	    				<div class="item-title">Билет на Арт-погружение</div>
+	    			</div>
+	    		</a>
+	    		<button data-id="32" class="cart">В корзину</button>
+	    	</div>
+		    <div class="item">
+		    	<a href="tea.html?id=33"><div style="" class="img-hidden"><img class="dishes-img" src="image/тренинг-йога.jpg" alt=""></div>
+		    		<div class="info">
+		    			<div class="item-price">1 500 ₽</div>
+		    			<div class="item-title">Билет на тренинг - Йога голоса</div>
+		    		</div>
+		    	</a>
+		    	<button data-id="33" class="cart">В корзину</button>
+		    </div>
+	    </div>
+    </div>
+
+
+    <footer>
+		<script type="text/javascript" src="js/mobile.js"></script>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/all.min.css">
+    <link rel="icon" href="../image/logo.png">
+</head>
+<body>
+	
+	<header>
+        <a class="logo" href="../index.html"><img class="logo" src="../image/logo.png" alt="logo"></a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="../index.html">Чай</a></li>
+                <li class="active"><a href="../cookware.html">Посуда</a></li>
+                <li><a href="../billets.html">Билеты</a></li>
+                <li><a href="../about.html">О нас</a></li>
+            </ul>
+        </nav>
+        <div class="cta" href="#">Корзина</div>
+    </header>
+
+    <div class="nowrap">
+        <div class="imag">
+            <img id="image" class="img" alt="">
+            <div id="mini-img" class="mini-img"></div>
+        </div>
+        <div class="descr">
+
+            <h1 id="fistname" class="green"></h1> <br>
+            <h4 id="lastname" class="dark-green"></h4> <br>
+            <div id="description"></div>
+            <div class="cw">
+                <h1 id="cost"></h1>
+                <h1>₽</h1>
+                <div class="void"></div>
+                <div class="void"></div>
+                <button class="cart-btn">В корзину</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <script type="text/javascript" src="../js/mobile.js"></script>
+        <script>
+            let fistname = document.querySelector("#fistname");
+            let lastname = document.querySelector("#lastname");
+            let description = document.querySelector("#description");
+            let image = document.querySelector("#image");
+            let cost = document.querySelector("#cost");
+            let params = (new URL(window.location)).searchParams;
+            let id = params.get('id');
+            let json; 
+            let cont_img = document.querySelector("#mini-img");
+            fetch("tovar.json")
+            .then((res)=>{return res.json()})
+            .then((res)=>{
+                res.tovar.forEach(item => {
+                if (item.id == id) {
+                    fistname.innerText = item.fistname;
+                    lastname.innerText = item.lastname;
+                    description.innerHTML = item.description;
+                    image.src = item.image[0];
+                    item.image.forEach(img=>{
+                        let mini_img = document.createElement("img");
+                        mini_img = cont_img.appendChild(mini_img);
+                        mini_img.src = img;
+                        mini_img.classList.add("mini-img");
+                        mini_img.onclick = function (){
+                            console.log(mini_img.src);
+                            image.src = mini_img.src;
+                        }
+                        mini_img.ondragstart = function(){
+                            return false;
+                        }
+                    })
+                    cost.innerText = item.cost;
+                    document.title = item.title;
+                }
+            })
+            console.log(res);
+        });
+            console.log(json);
+        </script>
+    </footer>
+</body>
+</html>
